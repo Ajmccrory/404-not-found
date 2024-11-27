@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty 404 Portal Page
+
+A creative and interactive 404 error page inspired by Rick and Morty's portal animations. I got bored and wanted to make a 404 not found page with a rick and morty theme but couldn't find the fonts I wanted.
+
+## Features
+
+- Interactive portal that follows mouse movement
+- Multiple background portals with random positions and animations
+- Portal explosion effects when clicking the return button
+- Authentic Rick and Morty styling with the "Get Schwifty" font
+- GSAP animations for smooth, professional motion
+- Fully responsive design
+- Custom glow effects and animations
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
 ```bash
 npm run dev
