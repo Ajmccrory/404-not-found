@@ -1,7 +1,5 @@
 # Rick and Morty 404 Portal Page
 
-A creative and interactive 404 error page inspired by Rick and Morty's portal animations. I got bored and wanted to make a 404 not found page with a rick and morty theme but couldn't find the fonts I wanted.
-
 ## Features
 
 - Interactive portal that follows mouse movement
