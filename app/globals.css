@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('/fonts/get_schwifty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Add this class for Rick and Morty styled text */
+.rick-font {
+  font-family: 'Get Schwifty', cursive;
+  text-shadow: 
+    0 0 10px #61ffe7,
+    0 0 20px #61ffe7,
+    0 0 30px #61ffe7;
+  letter-spacing: 2px;
+}
+
+.portal-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid #61ffe7;
+  box-shadow: 
+    0 0 30px #61ffe7,
+    inset 0 0 30px #61ffe7;
+  animation: rotateSpin 3s linear infinite;
+}
+
+.portal-ring-bg {
+  position: absolute;
+  border-radius: 50%;
+  border: 6px solid #61ffe7;
+  box-shadow: 
+    0 0 50px #61ffe7,
+    inset 0 0 50px #61ffe7;
+  animation: rotateSpin 8s linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.portal-ring::before,
+.portal-ring-bg::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 4px solid #25cec5;
+  box-shadow: 0 0 40px #25cec5;
+  animation: rotateSpin 2s linear infinite reverse;
+}
+
+.portal-ring::after,
+.portal-ring-bg::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(97,255,231,0.4) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@keyframes rotateSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.portal-spin {
+  animation: portalSpin 1s ease-in-out;
+}
+
+@keyframes portalSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeDown {
+  animation: fadeDown 0.5s ease-out forwards;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+body {
+  background: #1a1a1a;
+  color: #61ffe7;
+  overflow-x: hidden;
+}
+
+/* Add custom text glow effect */
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(97,255,231,0.5),
+                 0 0 20px rgba(97,255,231,0.3),
+                 0 0 30px rgba(97,255,231,0.1);
+  }
+  
+  .text-glow-sm {
+    text-shadow: 0 0 5px rgba(97,255,231,0.5),
+                 0 0 10px rgba(97,255,231,0.3);
+  }
+}
+
+/* Button hover effect */
+button:hover span {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* Improve text rendering */
+h1, h2, p, button {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} 
